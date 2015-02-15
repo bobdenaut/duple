@@ -11,13 +11,4 @@
 .idea/vcs.xml
 .idea/workspace.xml
 duple.iml
-target/classes/ro/bobdenaut/duple/DuplicateEntity$METHOD_TYPE.class
-target/classes/ro/bobdenaut/duple/DuplicateEntity.class
-target/duple.jar
-target/maven-archiver/pom.properties
-target/surefire-reports/ro.bobdenaut.duple.DuplicateEntityTest.txt
-target/surefire-reports/TEST-ro.bobdenaut.duple.DuplicateEntityTest.xml
-target/test-classes/ro/bobdenaut/data/Entitate.class
-target/test-classes/ro/bobdenaut/data/EntitateDTO.class
-target/test-classes/ro/bobdenaut/data/Somefield.class
-target/test-classes/ro/bobdenaut/duple/DuplicateEntityTest.class
+target
