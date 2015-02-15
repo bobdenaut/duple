@@ -4,6 +4,7 @@ import ro.bobdenaut.duple.util.METHOD_TYPE;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,9 +93,12 @@ public abstract class DuplicateEntity {
     }
 
     private static boolean isGetter(Method method) {
-        if (!method.getName().startsWith(METHOD_TYPE.GET.getMethodType())
-                && !method.getName().startsWith(METHOD_TYPE.IS.getMethodType())
-                && !method.getName().startsWith(METHOD_TYPE.HAS.getMethodType())) {
+        if(!Modifier.isPublic(method.getModifiers())){
+            return false;
+        }
+        if (!method.getName().matches(METHOD_TYPE.GET_PATERN.getMethodType())
+                && !method.getName().matches(METHOD_TYPE.IS_PATERN.getMethodType())
+                && !method.getName().matches(METHOD_TYPE.HAS_PATERN.getMethodType())) {
             return false;
         }
         if (method.getParameterTypes().length != 0) {
@@ -107,7 +111,7 @@ public abstract class DuplicateEntity {
     }
 
     private static boolean isSetter(Method method) {
-        if (!method.getName().startsWith(METHOD_TYPE.SET.getMethodType())) {
+        if (!method.getName().matches(METHOD_TYPE.SET_PATERN.getMethodType())) {
             return false;
         }
         if (method.getParameterTypes().length != 1) {
