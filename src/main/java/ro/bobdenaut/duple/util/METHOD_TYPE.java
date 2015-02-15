@@ -4,16 +4,21 @@ package ro.bobdenaut.duple.util;
  * Created by Voicu.Liviu on 2/15/2015.
  */
 public enum METHOD_TYPE {
-    SET("set"), GET("get"), IS("is"), HAS("has"),
-    SET_PATERN("^set[A-Z].*"), GET_PATERN("^get[A-Z].*"), IS_PATERN("^is[A-Z].*"), HAS_PATERN("^has[A-Z].*");
+    SET("set", "^set[A-Z].*"), GET("get", "^get[A-Z].*"), IS("is", "^is[A-Z].*"), HAS("has", "^has[A-Z].*");
 
     private final String methodType;
+    private final String patern;
 
-    METHOD_TYPE(String methodType) {
+    METHOD_TYPE(String methodType, String patern) {
         this.methodType = methodType;
+        this.patern = patern;
     }
 
     public String getMethodType() {
         return this.methodType;
+    }
+
+    public String getPatern() {
+        return patern;
     }
 }

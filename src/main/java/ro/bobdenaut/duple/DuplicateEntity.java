@@ -96,9 +96,9 @@ public abstract class DuplicateEntity {
         if(!Modifier.isPublic(method.getModifiers())){
             return false;
         }
-        if (!method.getName().matches(METHOD_TYPE.GET_PATERN.getMethodType())
-                && !method.getName().matches(METHOD_TYPE.IS_PATERN.getMethodType())
-                && !method.getName().matches(METHOD_TYPE.HAS_PATERN.getMethodType())) {
+        if (!method.getName().matches(METHOD_TYPE.GET.getPatern())
+                && !method.getName().matches(METHOD_TYPE.IS.getPatern())
+                && !method.getName().matches(METHOD_TYPE.HAS.getPatern())) {
             return false;
         }
         if (method.getParameterTypes().length != 0) {
@@ -111,7 +111,7 @@ public abstract class DuplicateEntity {
     }
 
     private static boolean isSetter(Method method) {
-        if (!method.getName().matches(METHOD_TYPE.SET_PATERN.getMethodType())) {
+        if (!method.getName().matches(METHOD_TYPE.SET.getPatern())) {
             return false;
         }
         if (method.getParameterTypes().length != 1) {
