@@ -4,22 +4,23 @@ package ro.bobdenaut.data;
  * Created by Voicu.Liviu on 2/14/2015.
  */
 public class EntitateDTO {
-    private String objString;
+//    private String objString;
     private Long objLong;
     private Object objObject;
     private int i;
     private float f;
     private long l;
     private Boolean objBoolean;
+    private Boolean otherBoolean;
     private Somefield afield;
 
-    public String getObjString() {
-        return objString;
-    }
-
-    public void setObjString(String objString) {
-        this.objString = objString;
-    }
+//    public String getObjString() {
+//        return objString;
+//    }
+//
+//    public void setObjString(String objString) {
+//        this.objString = objString;
+//    }
 
     public Long getObjLong() {
         return objLong;
@@ -67,6 +68,14 @@ public class EntitateDTO {
 
     public void setObjBoolean(Boolean objBoolean) {
         this.objBoolean = objBoolean;
+    }
+
+    public Boolean hasOtherBoolean() {
+        return otherBoolean;
+    }
+
+    public void setOtherBoolean(Boolean otherBoolean) {
+        this.otherBoolean = otherBoolean;
     }
 
     public Somefield getAfield() {

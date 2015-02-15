@@ -4,7 +4,7 @@ package ro.bobdenaut.duple.util;
  * Created by Voicu.Liviu on 2/15/2015.
  */
 public enum METHOD_TYPE {
-    SET("set"), GET("get"), IS("is");
+    SET("set"), GET("get"), IS("is"), HAS("has");
 
     private final String methodType;
 

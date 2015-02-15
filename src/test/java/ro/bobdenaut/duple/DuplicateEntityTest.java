@@ -25,6 +25,7 @@ public class DuplicateEntityTest extends TestCase {
         entitate.setF(2.22f);
         entitate.setL(22l);
         entitate.setObjBoolean(Boolean.TRUE);
+        entitate.setOtherBoolean(Boolean.FALSE);
         Somefield field = new Somefield();
         field.setField("somefield class!!!");
         entitate.setAfield(field);
@@ -36,13 +37,14 @@ public class DuplicateEntityTest extends TestCase {
     public void tearDown() throws Exception {
         assertNotNull(entitateDTO);
 
-        System.out.println(entitateDTO.getObjString());
+//        System.out.println(entitateDTO.getObjString());
         System.out.println(entitateDTO.getObjLong());
         System.out.println(entitateDTO.getObjObject());
         System.out.println(entitateDTO.getI());
         System.out.println(entitateDTO.getF());
         System.out.println(entitateDTO.getL());
         System.out.println(entitateDTO.isObjBoolean());
+        System.out.println(entitateDTO.hasOtherBoolean());
         System.out.println(entitateDTO.getAfield()!=null?entitateDTO.getAfield().getField():null);
     }
 
@@ -51,7 +53,7 @@ public class DuplicateEntityTest extends TestCase {
         assertNotNull(entitate);
         assertNotNull(entitateDTO);
         try {
-            DuplicateEntity.start(entitate, entitateDTO);
+            DuplicateEntity.start(entitate, entitateDTO, true);
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

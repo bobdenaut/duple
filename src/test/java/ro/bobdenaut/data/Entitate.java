@@ -11,6 +11,7 @@ public class Entitate{
     private float f;
     private long l;
     private Boolean objBoolean;
+    private Boolean otherBoolean;
     private Somefield afield;
 
     public String getObjString() {
@@ -67,6 +68,14 @@ public class Entitate{
 
     public void setObjBoolean(Boolean objBoolean) {
         this.objBoolean = objBoolean;
+    }
+
+    public Boolean hasOtherBoolean() {
+        return otherBoolean;
+    }
+
+    public void setOtherBoolean(Boolean otherBoolean) {
+        this.otherBoolean = otherBoolean;
     }
 
     public Somefield getAfield() {
