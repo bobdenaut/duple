@@ -1,5 +1,7 @@
 package ro.bobdenaut.duple;
 
+import ro.bobdenaut.duple.util.METHOD_TYPE;
+
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -9,20 +11,6 @@ import java.util.List;
  * Created by Voicu.Liviu on 2/14/2015.
  */
 public abstract class DuplicateEntity {
-
-    enum METHOD_TYPE{
-        SET("set"), GET("get"), IS("is");
-
-        private final String methodType;
-
-        METHOD_TYPE(String methodType){
-            this.methodType = methodType;
-        }
-
-        public String getMethodType(){
-            return this.methodType;
-        }
-    }
 
     public static void start(Object src, Object dest) throws InvocationTargetException, IllegalAccessException {
         List<Method> getMethodsSRC = getGetters(src.getClass());
